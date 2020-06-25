@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3df532366fc02ac00c68fee26ee2763ed95b2a08d8bfe97045db055ac0dd97fd
+-- hash: bdff23c4edcf55a23ad61fdb4f46a65b989bf4ae7836e1061c2e80d8355287fa
 
 name:           frontend
 version:        0.1.0.0
@@ -18,6 +18,8 @@ executable frontend
       src
   build-depends:
       base
+    , jsaddle-warp
     , reflex
     , reflex-dom
+    , text
   default-language: Haskell2010
