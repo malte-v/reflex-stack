@@ -6,7 +6,6 @@ dependencies:
 - reflex
 - reflex-dom
 - text
-- jsaddle-warp
 
 executables:
   frontend:
