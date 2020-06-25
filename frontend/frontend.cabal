@@ -1,0 +1,23 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3df532366fc02ac00c68fee26ee2763ed95b2a08d8bfe97045db055ac0dd97fd
+
+name:           frontend
+version:        0.1.0.0
+build-type:     Simple
+
+executable frontend
+  main-is: Main.hs
+  other-modules:
+      Paths_frontend
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , reflex
+    , reflex-dom
+  default-language: Haskell2010

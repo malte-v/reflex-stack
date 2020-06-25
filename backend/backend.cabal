@@ -1,0 +1,21 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e1780bddb11ea51c533a9912615acdbc2060061bbe67c8b15cdc395f4fa01513
+
+name:           backend
+version:        0.1.0.0
+build-type:     Simple
+
+executable backend
+  main-is: Main.hs
+  other-modules:
+      Paths_backend
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  default-language: Haskell2010
