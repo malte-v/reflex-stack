@@ -1,7 +1,7 @@
 module Main where
 
+import RIO
 import Reflex.Dom
-import Data.Text
 
 main :: IO ()
-main = mainWidget $ text $ pack "hello"
+main = mainWidget $ text "hello"

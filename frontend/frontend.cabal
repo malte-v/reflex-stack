@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bdff23c4edcf55a23ad61fdb4f46a65b989bf4ae7836e1061c2e80d8355287fa
+-- hash: 4ea22e82595092f9d531febdb4ce138ed8ac16d8c5a094236f366eb542326cec
 
 name:           frontend
 version:        0.1.0.0
@@ -16,10 +16,12 @@ executable frontend
       Paths_frontend
   hs-source-dirs:
       src
+  default-extensions: BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TupleSections TypeFamilies TypeOperators TypeSynonymInstances ViewPatterns
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
   build-depends:
       base
-    , jsaddle-warp
     , reflex
     , reflex-dom
+    , rio
     , text
   default-language: Haskell2010

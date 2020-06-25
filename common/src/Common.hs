@@ -1,4 +1,6 @@
 module Common (someFunc) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import RIO
+
+someFunc :: Text
+someFunc = "someFunc"
