@@ -3,12 +3,17 @@ version: '0.1.0.0'
 
 dependencies:
 - base
+- common
 - rio
+
+library:
+  source-dirs: src
 
 executables:
   backend:
     main: Main.hs
-    source-dirs: src
+    source-dirs: app
+    dependencies: backend
 
 default-extensions:
 - BangPatterns

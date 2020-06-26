@@ -3,15 +3,19 @@ version: '0.1.0.0'
 
 dependencies:
 - base
+- common
 - reflex
 - reflex-dom
 - rio
-- text
+
+library:
+  source-dirs: src
 
 executables:
   frontend:
     main: Main.hs
-    source-dirs: src
+    source-dirs: app
+    dependencies: frontend
 
 default-extensions:
 - BangPatterns

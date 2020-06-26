@@ -8,3 +8,10 @@ pacman -S webkit2gtk
 By default, the frontend will be served locally by a Warp server (`jsaddle-warp`).
 It can also be turned into a GTK application (`jsaddle-webkit2gtk`). To do so, set
 `flags.reflex-dom.use-warp` to `false` in `stack.yaml`.
+
+# Running
+
+```
+yarn install
+yarn serve
+```

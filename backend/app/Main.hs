@@ -1,6 +1,7 @@
 module Main where
 
+import Backend
 import RIO
 
 main :: IO ()
-main = pure ()
+main = backend

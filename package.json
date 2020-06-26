@@ -1,0 +1,13 @@
+{
+  "name": "reflex-stack",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "stylus": "^0.54.7",
+    "touch-on-save": "^2.0.0"
+  },
+  "scripts": {
+    "serve": "concurrently --kill-others --names \"backend,frontend,stylus\" --prefix-colors \"cyan,yellow,magenta\" \"stack exec -- ghcid -r -c 'stack ghci backend'\" \"stack exec -- ghcid -r -c 'stack ghci frontend'\" \"stylus -w frontend/styles/main.styl -o frontend/styles/styles.css\" \"touch-on-save frontend/styles/styles.css frontend/src/Frontend.hs\""
+  }
+}

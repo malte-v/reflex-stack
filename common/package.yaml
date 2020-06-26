@@ -3,12 +3,12 @@ version: '0.1.0.0'
 
 dependencies:
 - base
+- extra
 - rio
+- template-haskell
 
 library:
   source-dirs: src
-  exposed-modules:
-  - Common
 
 default-extensions:
 - BangPatterns

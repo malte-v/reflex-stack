@@ -4,14 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4ea22e82595092f9d531febdb4ce138ed8ac16d8c5a094236f366eb542326cec
+-- hash: 811f962e2c6e7f12c995eb7f5c76567a7964201028943658e6124e143a4e22c7
 
 name:           frontend
 version:        0.1.0.0
 build-type:     Simple
 
-executable frontend
-  main-is: Main.hs
+library
+  exposed-modules:
+      Frontend
   other-modules:
       Paths_frontend
   hs-source-dirs:
@@ -20,8 +21,25 @@ executable frontend
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
   build-depends:
       base
+    , common
     , reflex
     , reflex-dom
     , rio
-    , text
+  default-language: Haskell2010
+
+executable frontend
+  main-is: Main.hs
+  other-modules:
+      Paths_frontend
+  hs-source-dirs:
+      app
+  default-extensions: BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TupleSections TypeFamilies TypeOperators TypeSynonymInstances ViewPatterns
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base
+    , common
+    , frontend
+    , reflex
+    , reflex-dom
+    , rio
   default-language: Haskell2010
