@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+cd "$(dirname "$0")/../backend/cert"
+
+######################
+# Become a Certificate Authority
+######################
+
+echo "\n==> Creating certificate authority\n"
+
+AUTHORITY_NAME=authority
+# Generate private key
+openssl genrsa -out $AUTHORITY_NAME.key 2048
+# Generate root certificate
+openssl req -x509 -new -nodes -key $AUTHORITY_NAME.key -sha256 -days 825 -out $AUTHORITY_NAME.pem
+
+######################
+# Create CA-signed certs
+######################
+
+echo "\n==> Creating certificate for localhost\n"
+
+DOMAIN_NAME=localhost
+# Generate a private key
+openssl genrsa -out $DOMAIN_NAME.key 2048
+# Create a certificate-signing request
+openssl req -new -key $DOMAIN_NAME.key -out $DOMAIN_NAME.csr
+# Create a config file for the extensions
+>$DOMAIN_NAME.ext cat <<-EOF
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = $DOMAIN_NAME # Be sure to include the domain name here because Common Name is not so commonly honoured by itself
+EOF
+# Create the signed certificate
+openssl x509 -req -in $DOMAIN_NAME.csr -CA $AUTHORITY_NAME.pem -CAkey $AUTHORITY_NAME.key -CAcreateserial \
+-out $DOMAIN_NAME.crt -days 825 -sha256 -extfile $DOMAIN_NAME.ext

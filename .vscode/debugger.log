@@ -1,0 +1,4 @@
+2020-07-02 15:40:22.642090197000 [43274(ThreadId 9)] CRITICAL APP - invalid dap result from ghci. ["Running on https://localhost:8080"]
+2020-07-02 15:40:23.087097425000 [43274(ThreadId 12)] CRITICAL THREAD_MGR - Critical exit started.
+2020-07-02 16:10:01.932037206000 [44839(ThreadId 9)] CRITICAL APP - invalid dap result from ghci. ["Running on https://localhost:8080"]
+2020-07-02 16:10:02.404515824000 [44839(ThreadId 12)] CRITICAL THREAD_MGR - Critical exit started.

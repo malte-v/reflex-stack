@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "reload-browser",
+      "type": "shell",
+      "command": "xdotool search --onlyvisible --class Chrome windowfocus key F5 && xdotool search --onlyvisible --class code-oss windowfocus",
+      "presentation": {
+        "reveal": "never",
+        "echo": false,
+        "panel": "dedicated",
+        "showReuseMessage": false
+      },
+      "isBackground": false,
+      "runOptions": {
+        "instanceLimit": 1000
+      }
+    }
+  ]
+}

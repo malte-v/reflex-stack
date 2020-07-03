@@ -4,34 +4,31 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c5150940504b3c89ea728185f00492c57b88ef13299c02aa4f4fa323fbbba7cd
+-- hash: b34d5410fc3b02c5d7f17ee82d4f2a6dd8f8127c7c894834b788a3990acd595d
 
-name:           backend
+name:           app
 version:        0.1.0.0
 build-type:     Simple
 
-library
-  exposed-modules:
-      Backend
+executable app
+  main-is: Main.hs
   other-modules:
-      Paths_backend
-  hs-source-dirs:
-      src
+      Paths_app
   default-extensions: BangPatterns BinaryLiterals BlockArguments ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes RecordWildCards RecursiveDo ScopedTypeVariables StandaloneDeriving TupleSections TypeFamilies TypeOperators TypeSynonymInstances ViewPatterns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base
-    , common
+      backend
+    , base
+    , frontend
+    , http-types
     , jose
+    , jsaddle
+    , jsaddle-warp
     , rio
-    , servant
-    , servant-auth
     , servant-auth-server
-    , servant-server
     , text
     , wai
-    , wai-cors
-    , wai-extra
     , warp
     , warp-tls
+    , websockets
   default-language: Haskell2010

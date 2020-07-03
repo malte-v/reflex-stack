@@ -4,22 +4,31 @@ version: '0.1.0.0'
 dependencies:
 - base
 - common
+- http-types
+- jsaddle
+- jsaddle-dom
+- jsaddle-warp
+- lens
 - reflex
 - reflex-dom
 - rio
+- servant
+- servant-auth-server
+- servant-reflex
+- servant-router
+- text
+- utf8-string
+- wai
+- warp
+- websockets
 
 library:
   source-dirs: src
 
-executables:
-  frontend:
-    main: Main.hs
-    source-dirs: app
-    dependencies: frontend
-
 default-extensions:
 - BangPatterns
 - BinaryLiterals
+- BlockArguments
 - ConstraintKinds
 - DataKinds
 - DefaultSignatures
@@ -49,6 +58,7 @@ default-extensions:
 - PolyKinds
 - RankNTypes
 - RecordWildCards
+- RecursiveDo
 - ScopedTypeVariables
 - StandaloneDeriving
 - TupleSections

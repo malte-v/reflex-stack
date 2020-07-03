@@ -1,24 +1,25 @@
-name: backend
+name: app
 version: '0.1.0.0'
 
 dependencies:
+- backend
 - base
-- common
+- frontend
+- http-types
 - jose
+- jsaddle
+- jsaddle-warp
 - rio
-- servant
-- servant-auth
 - servant-auth-server
-- servant-server
 - text
 - wai
-- wai-cors
-- wai-extra
 - warp
 - warp-tls
+- websockets
 
-library:
-  source-dirs: src
+executables:
+  app:
+    main: Main.hs
 
 default-extensions:
 - BangPatterns

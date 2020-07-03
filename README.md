@@ -1,17 +1,11 @@
-Building this requires `webkit2gtk` to be installed locally. On Arch Linux, this
-can be done via
+## Generating localhost TLS certificate for the backend
+
+The backend is always served via HTTPS, even when doing development. To generate the TLS certificate, run `tools/certify`. This will create a certificate authority and let it issue a certificate for `localhost`. You can assign the certificate and certificate authority any information you want, but I recommend to set at least the organization name so it is clear that you signed the certificate. Then, add `backend/cert/authority.pem` to your browser's trusted certificate authorities.
+
+## Running
 
 ```
-pacman -S webkit2gtk
-```
-
-By default, the frontend will be served locally by a Warp server (`jsaddle-warp`).
-It can also be turned into a GTK application (`jsaddle-webkit2gtk`). To do so, set
-`flags.reflex-dom.use-warp` to `false` in `stack.yaml`.
-
-# Running
-
-```
+stack build
 yarn install
 yarn serve
 ```

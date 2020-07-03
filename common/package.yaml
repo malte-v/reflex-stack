@@ -2,9 +2,13 @@ name: common
 version: '0.1.0.0'
 
 dependencies:
+- aeson
 - base
 - extra
 - rio
+- servant
+- servant-auth
+- servant-auth-server
 - template-haskell
 
 library:
@@ -13,6 +17,7 @@ library:
 default-extensions:
 - BangPatterns
 - BinaryLiterals
+- BlockArguments
 - ConstraintKinds
 - DataKinds
 - DefaultSignatures
@@ -42,6 +47,7 @@ default-extensions:
 - PolyKinds
 - RankNTypes
 - RecordWildCards
+- RecursiveDo
 - ScopedTypeVariables
 - StandaloneDeriving
 - TupleSections
