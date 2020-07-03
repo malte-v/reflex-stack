@@ -6,6 +6,5 @@ The backend is always served via HTTPS, even when doing development. To generate
 
 ```
 stack build
-yarn install
-yarn serve
+stack exec app
 ```
